@@ -36,30 +36,28 @@ public final class ValidateHeap {
   // Returns true if the tree rooted at root is complete: in level order, no
   // node comes after a missing child.
   private static <T> boolean isComplete(Node<T> root) {
-    if (root == null) {
-      return true;
-    }
+    if (root == null) return true;
     Queue<Node<T>> queue = new LinkedQueue<>();
     queue.enqueue(root);
-    boolean gap = false;  // have we passed a missing child yet?
+
+    boolean seenNull = false;
     while (!queue.isEmpty()) {
       Node<T> node = queue.front();
       queue.dequeue();
-      if (node.left == null) {
-        gap = true;
-      } else if (gap) {
-        return false;  // a node after a missing child
-      } else {
+      if (node.left != null) {
+        if (seenNull) return false;
         queue.enqueue(node.left);
-      }
-      if (node.right == null) {
-        gap = true;
-      } else if (gap) {
-        return false;  // a node after a missing child
       } else {
+        seenNull = true;
+      }
+      if (node.right != null) {
+        if (seenNull) return false;
         queue.enqueue(node.right);
+      } else {
+        seenNull = true;
       }
     }
+
     return true;
   }
 }
