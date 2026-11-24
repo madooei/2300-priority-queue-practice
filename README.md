@@ -40,7 +40,7 @@ code/
 - `scripts/test.sh practice.ValidateHeapTest` — compiles everything and runs only that test class.
 - `scripts/run.sh demo.ValidateHeapDemo` — compiles everything and runs that one demo. Every problem class has its own demo, `<Class>Demo`.
 
-## What's here
+## Contents
 
 - `practice.ValidateHeap` — `isMinHeap`, which returns whether a binary tree is complete and has no node larger than either of its children. It uses two private helpers, `isOrdered` and `isComplete`. The empty tree is valid, and duplicate values are allowed.
 - `tree.Node<T>` — the binary-tree node from the tree chapter, with a value and a left and a right child. It is a copy, included so this code compiles and runs on its own.
