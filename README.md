@@ -24,19 +24,21 @@ code/
       queue/
         Queue.java                 # the Queue ADT
         LinkedQueue.java           # a linked-list Queue
+      demo/
+        ValidateHeapDemo.java      # the three example trees from the notes
     test/
       practice/
         ValidateHeapTest.java
   scripts/
     test.sh                        # compile and run the JUnit tests
+    run.sh                         # compile and run one demo
 ```
 
 ## How to compile and run
 
 - `scripts/test.sh` — compiles everything and runs the full JUnit suite.
 - `scripts/test.sh practice.ValidateHeapTest` — compiles everything and runs only that test class.
-
-There is no demo program for this problem; the tests are how you check your work.
+- `scripts/run.sh demo.ValidateHeapDemo` — compiles everything and runs that one demo. Every problem class has its own demo, `<Class>Demo`.
 
 ## What's here
 
@@ -44,3 +46,4 @@ There is no demo program for this problem; the tests are how you check your work
 - `tree.Node<T>` — the binary-tree node from the tree chapter, with a value and a left and a right child. It is a copy, included so this code compiles and runs on its own.
 - `queue.Queue<T>` and `queue.LinkedQueue<T>` — the Queue ADT and its linked-list implementation, copied so this code compiles and runs on its own. `isComplete` uses a queue for its level-order walk.
 - `practice.ValidateHeapTest` — tests for the problem.
+- `demo.ValidateHeapDemo` — the demo for the problem, on the three example trees from the notes.
